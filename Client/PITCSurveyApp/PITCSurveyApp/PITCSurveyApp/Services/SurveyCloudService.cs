@@ -15,7 +15,7 @@ namespace PITCSurveyApp.Services
     /// </summary>
     public static class SurveyCloudService
     {
-        private const string AzureMobileAppUrl = "https://appname.azurewebsites.net";
+        private const string AzureMobileAppUrl = "https://APP_NAME_REPLACE.azurewebsites.net";
 
         /// <summary>
         /// The API client.

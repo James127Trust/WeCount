@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using HockeyApp;
+using Microsoft.AppCenter.Analytics;
 using PITCSurveyApp.Services;
 
 [assembly: Xamarin.Forms.Dependency(typeof(PITCSurveyApp.iOS.IOSMetricsManagerService))]
@@ -11,7 +11,7 @@ namespace PITCSurveyApp.iOS
     {
         public void TrackEvent(string eventName)
         {
-            MetricsManager.TrackEvent(eventName);
+            Analytics.TrackEvent(eventName);
         }
         public void TrackException(string eventName, Exception ex)
         {
@@ -35,7 +35,7 @@ namespace PITCSurveyApp.iOS
 
         public void TrackEvent(string eventName, Dictionary<string, string> properties, Dictionary<string, double> measurements)
         {
-            MetricsManager.TrackEvent(eventName, properties, measurements);
+            Analytics.TrackEvent(eventName, properties);  // TODO: figure out what's in measurements and update interface
         }
     }
 }

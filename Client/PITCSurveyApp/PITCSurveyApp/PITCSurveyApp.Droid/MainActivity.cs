@@ -4,11 +4,13 @@ using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using Android.Webkit;
-using HockeyApp.Android;
-using HockeyApp.Android.Metrics;
 using Microsoft.WindowsAzure.MobileServices;
 using PITCSurveyApp.Helpers;
 using PITCSurveyApp.Services;
+
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace PITCSurveyApp.Droid
 {
@@ -22,10 +24,8 @@ namespace PITCSurveyApp.Droid
 
             base.OnCreate (bundle);
 
-            CrashManager.Register(this, UserSettings.HockeyAppId);
-
-            MetricsManager.Register(Application, UserSettings.HockeyAppId);
-            MetricsManager.EnableUserMetrics();
+            AppCenter.Start(UserSettings.AppCenterId,
+                typeof(Analytics), typeof(Crashes));
 
             global::Xamarin.Forms.Forms.Init (this, bundle);
             App.Init(this);

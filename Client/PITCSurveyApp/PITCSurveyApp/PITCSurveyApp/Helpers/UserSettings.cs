@@ -18,11 +18,11 @@ namespace PITCSurveyApp.Helpers
 
         // HockeyApp App IDs, we have one for each supported platform
 #if WINDOWS_UWP
-        public const string HockeyAppId = "hockeyAppId";
+        public const string AppCenterId = "APPCENTER_MICROSOFT";
 #elif __ANDROID__
-        public const string HockeyAppId = "hockeyAppId";
+        public const string AppCenterId = "APPCENTER_ANDROID";
 #elif __IOS__
-        public const string HockeyAppId = "hockeyAppId";
+        public const string AppCenterId = "APPCENTER_IOS";
 #endif
 
         private static ISettings AppSettings => CrossSettings.Current;

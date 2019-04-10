@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Foundation;
-using HockeyApp.iOS;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 using Microsoft.WindowsAzure.MobileServices;
 using PITCSurveyApp.Helpers;
 using PITCSurveyApp.Services;
@@ -30,11 +32,9 @@ namespace PITCSurveyApp.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            var manager = BITHockeyManager.SharedHockeyManager;
-            manager.Configure(UserSettings.HockeyAppId);
-            manager.StartManager();
-            manager.Authenticator.AuthenticateInstallation();
-                // This line is obsolete in crash only builds (do we need it then?)
+            AppCenter.Start(UserSettings.AppCenterId,
+                typeof(Analytics), typeof(Crashes));
+
 
             global::Xamarin.Forms.Forms.Init();
             App.Init(this);

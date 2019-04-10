@@ -1,23 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-
-using Microsoft.HockeyApp;
-
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
 using PITCSurveyApp.Helpers;
 
 namespace PITCSurveyApp.UWP
@@ -36,7 +24,7 @@ namespace PITCSurveyApp.UWP
             this.InitializeComponent();
             this.Suspending += OnSuspending;
 
-            Microsoft.HockeyApp.HockeyClient.Current.Configure(UserSettings.HockeyAppId);
+            AppCenter.Start(UserSettings.AppCenterId, typeof(Analytics));
         }
 
         /// <summary>
