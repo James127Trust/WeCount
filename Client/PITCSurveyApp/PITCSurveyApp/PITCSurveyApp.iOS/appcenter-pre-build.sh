@@ -10,8 +10,8 @@ echo " - AppName: $APP_NAME_REPLACE"
 SettingsFile=$APPCENTER_SOURCE_DIRECTORY/Client/PITCSurveyApp/PITCSurveyApp/PITCSurveyApp/Helpers/UserSettings.cs
 
 sed -i '' "s/APPCENTER_MICROSOFT/$APPCENTER_MICROSOFT/g" $SettingsFile
-sed -i '' "s/APPCENTER_MICROSOFT/$APPCENTER_ANDROID/g" $SettingsFile
-sed -i '' "s/APPCENTER_MICROSOFT/$APPCENTER_IOS/g" $SettingsFile
+sed -i '' "s/APPCENTER_ANDROID/$APPCENTER_ANDROID/g" $SettingsFile
+sed -i '' "s/APPCENTER_IOS/$APPCENTER_IOS/g" $SettingsFile
 
 # Print out file for reference
 cat $SettingsFile
