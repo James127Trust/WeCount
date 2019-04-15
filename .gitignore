@@ -256,7 +256,3 @@ paket-files/
 # Xamarin
 
 Components
-
-# Files with local settings
-/Client/PITCSurveyApp/PITCSurveyApp/PITCSurveyApp/Helpers/UserSettings.cs
-/Client/PITCSurveyApp/PITCSurveyApp/PITCSurveyApp/Services/SurveyCloudService.cs
